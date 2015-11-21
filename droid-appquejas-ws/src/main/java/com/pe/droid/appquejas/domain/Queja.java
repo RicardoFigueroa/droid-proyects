@@ -63,6 +63,9 @@ public class Queja implements Serializable {
 	@Column(name="longitud_verificacion")
 	private double longitudVerificacion;
 
+	@Column(name="titulo_queja")
+	private String tituloQueja;
+	
 	@Column(name="observacion_cliente")
 	private String observacionCliente;
 
@@ -200,4 +203,13 @@ public class Queja implements Serializable {
 		this.observacionTrabajador = observacionTrabajador;
 	}
 
+	public String getTituloQueja() {
+		return tituloQueja;
+	}
+
+	public void setTituloQueja(String tituloQueja) {
+		this.tituloQueja = tituloQueja;
+	}
+
+	
 }
