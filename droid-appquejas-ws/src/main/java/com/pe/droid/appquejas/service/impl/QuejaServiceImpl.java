@@ -22,7 +22,6 @@ public class QuejaServiceImpl implements QuejaService {
 		List<Queja> quejaList = new ArrayList<>();
 		quejaList.addAll(quejaRepository.findByIdCliente(idUsuario));
 		quejaList.addAll(quejaRepository.findByIdTrabajador(idUsuario));
-
 		return quejaList;
 	}
 

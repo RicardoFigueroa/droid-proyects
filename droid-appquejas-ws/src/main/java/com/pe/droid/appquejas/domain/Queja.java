@@ -30,38 +30,38 @@ public class Queja implements Serializable {
 
 	@Lob
 	@Column(name="foto_queja_cliente")
-	private byte[] fotoQuejaCliente;
+	private String fotoQuejaCliente;
 
 	@Lob
 	@Column(name="foto_queja_verificacion")
-	private byte[] fotoQuejaVerificacion;
+	private String fotoQuejaVerificacion;
 
 	@Column(name="id_cliente")
-	private int idCliente;
+	private Integer idCliente;
 
 	@Column(name="id_queja_estado")
-	private int idQuejaEstado;
+	private Integer idQuejaEstado;
 
 	@Column(name="id_queja_gravedad")
-	private int idQuejaGravedad;
+	private Integer idQuejaGravedad;
 
 	@Column(name="id_trabajador")
-	private int idTrabajador;
+	private Integer idTrabajador;
 
 	@Column(name="id_zona")
-	private int idZona;
+	private Integer idZona;
 
 	@Column(name="latitud_creacion")
-	private double latitudCreacion;
+	private Double latitudCreacion;
 
 	@Column(name="latitud_verificacion")
-	private double latitudVerificacion;
+	private Double latitudVerificacion;
 
 	@Column(name="longitud_creacion")
-	private double longitudCreacion;
+	private Double longitudCreacion;
 
 	@Column(name="longitud_verificacion")
-	private double longitudVerificacion;
+	private Double longitudVerificacion;
 
 	@Column(name="titulo_queja")
 	private String tituloQueja;
@@ -76,7 +76,7 @@ public class Queja implements Serializable {
 	}
 
 	public Long getIdQueja() {
-		return this.idQueja;
+		return idQueja;
 	}
 
 	public void setIdQueja(Long idQueja) {
@@ -84,7 +84,7 @@ public class Queja implements Serializable {
 	}
 
 	public Date getFechaCreacion() {
-		return this.fechaCreacion;
+		return fechaCreacion;
 	}
 
 	public void setFechaCreacion(Date fechaCreacion) {
@@ -92,115 +92,99 @@ public class Queja implements Serializable {
 	}
 
 	public Date getFechaVerificacion() {
-		return this.fechaVerificacion;
+		return fechaVerificacion;
 	}
 
 	public void setFechaVerificacion(Date fechaVerificacion) {
 		this.fechaVerificacion = fechaVerificacion;
 	}
 
-	public byte[] getFotoQuejaCliente() {
-		return this.fotoQuejaCliente;
+	public String getFotoQuejaCliente() {
+		return fotoQuejaCliente;
 	}
 
-	public void setFotoQuejaCliente(byte[] fotoQuejaCliente) {
+	public void setFotoQuejaCliente(String fotoQuejaCliente) {
 		this.fotoQuejaCliente = fotoQuejaCliente;
 	}
 
-	public byte[] getFotoQuejaVerificacion() {
-		return this.fotoQuejaVerificacion;
+	public String getFotoQuejaVerificacion() {
+		return fotoQuejaVerificacion;
 	}
 
-	public void setFotoQuejaVerificacion(byte[] fotoQuejaVerificacion) {
+	public void setFotoQuejaVerificacion(String fotoQuejaVerificacion) {
 		this.fotoQuejaVerificacion = fotoQuejaVerificacion;
 	}
 
-	public int getIdCliente() {
-		return this.idCliente;
+	public Integer getIdCliente() {
+		return idCliente;
 	}
 
-	public void setIdCliente(int idCliente) {
+	public void setIdCliente(Integer idCliente) {
 		this.idCliente = idCliente;
 	}
 
-	public int getIdQuejaEstado() {
-		return this.idQuejaEstado;
+	public Integer getIdQuejaEstado() {
+		return idQuejaEstado;
 	}
 
-	public void setIdQuejaEstado(int idQuejaEstado) {
+	public void setIdQuejaEstado(Integer idQuejaEstado) {
 		this.idQuejaEstado = idQuejaEstado;
 	}
 
-	public int getIdQuejaGravedad() {
-		return this.idQuejaGravedad;
+	public Integer getIdQuejaGravedad() {
+		return idQuejaGravedad;
 	}
 
-	public void setIdQuejaGravedad(int idQuejaGravedad) {
+	public void setIdQuejaGravedad(Integer idQuejaGravedad) {
 		this.idQuejaGravedad = idQuejaGravedad;
 	}
 
-	public int getIdTrabajador() {
-		return this.idTrabajador;
+	public Integer getIdTrabajador() {
+		return idTrabajador;
 	}
 
-	public void setIdTrabajador(int idTrabajador) {
+	public void setIdTrabajador(Integer idTrabajador) {
 		this.idTrabajador = idTrabajador;
 	}
 
-	public int getIdZona() {
-		return this.idZona;
+	public Integer getIdZona() {
+		return idZona;
 	}
 
-	public void setIdZona(int idZona) {
+	public void setIdZona(Integer idZona) {
 		this.idZona = idZona;
 	}
 
-	public double getLatitudCreacion() {
-		return this.latitudCreacion;
+	public Double getLatitudCreacion() {
+		return latitudCreacion;
 	}
 
-	public void setLatitudCreacion(double latitudCreacion) {
+	public void setLatitudCreacion(Double latitudCreacion) {
 		this.latitudCreacion = latitudCreacion;
 	}
 
-	public double getLatitudVerificacion() {
-		return this.latitudVerificacion;
+	public Double getLatitudVerificacion() {
+		return latitudVerificacion;
 	}
 
-	public void setLatitudVerificacion(double latitudVerificacion) {
+	public void setLatitudVerificacion(Double latitudVerificacion) {
 		this.latitudVerificacion = latitudVerificacion;
 	}
 
-	public double getLongitudCreacion() {
-		return this.longitudCreacion;
+	public Double getLongitudCreacion() {
+		return longitudCreacion;
 	}
 
-	public void setLongitudCreacion(double longitudCreacion) {
+	public void setLongitudCreacion(Double longitudCreacion) {
 		this.longitudCreacion = longitudCreacion;
 	}
 
-	public double getLongitudVerificacion() {
-		return this.longitudVerificacion;
+	public Double getLongitudVerificacion() {
+		return longitudVerificacion;
 	}
 
-	public void setLongitudVerificacion(double longitudVerificacion) {
+	public void setLongitudVerificacion(Double longitudVerificacion) {
 		this.longitudVerificacion = longitudVerificacion;
-	}
-
-	public String getObservacionCliente() {
-		return this.observacionCliente;
-	}
-
-	public void setObservacionCliente(String observacionCliente) {
-		this.observacionCliente = observacionCliente;
-	}
-
-	public String getObservacionTrabajador() {
-		return this.observacionTrabajador;
-	}
-
-	public void setObservacionTrabajador(String observacionTrabajador) {
-		this.observacionTrabajador = observacionTrabajador;
 	}
 
 	public String getTituloQueja() {
@@ -210,6 +194,25 @@ public class Queja implements Serializable {
 	public void setTituloQueja(String tituloQueja) {
 		this.tituloQueja = tituloQueja;
 	}
+
+	public String getObservacionCliente() {
+		return observacionCliente;
+	}
+
+	public void setObservacionCliente(String observacionCliente) {
+		this.observacionCliente = observacionCliente;
+	}
+
+	public String getObservacionTrabajador() {
+		return observacionTrabajador;
+	}
+
+	public void setObservacionTrabajador(String observacionTrabajador) {
+		this.observacionTrabajador = observacionTrabajador;
+	}
+
+
+
 
 	
 }
