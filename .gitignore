@@ -25,4 +25,9 @@ proguard/
 
 # Log Files
 *.log
-
+*/target/*
+*/.settings/*
+*.classpath
+.classpath
+*.project
+.project
