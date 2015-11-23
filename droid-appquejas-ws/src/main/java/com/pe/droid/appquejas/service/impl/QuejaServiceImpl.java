@@ -43,6 +43,12 @@ public class QuejaServiceImpl implements QuejaService {
 			q.setNombreCliente(u.getApellidoPaterno() + " "
 					+ u.getApellidoMaterno() + ", " + u.getNombre());
 			
+			if(q.getIdTrabajador()!=null){
+				Usuario ut = usuarioRepository.findOne(q.getIdTrabajador().longValue());
+				q.setNombreTrabajador(ut.getApellidoPaterno() + " "
+						+ ut.getApellidoMaterno() + ", " + ut.getNombre());
+			}
+			
 		});
 
 		return quejaList;
