@@ -84,6 +84,9 @@ public class Queja implements Serializable {
 	@Transient
 	private String nombreEstado;
 
+	@Transient
+	private String nombreTrabajador;
+	
 	public Queja() {
 	}
 
@@ -247,6 +250,14 @@ public class Queja implements Serializable {
 
 	public void setNombreEstado(String nombreEstado) {
 		this.nombreEstado = nombreEstado;
+	}
+
+	public String getNombreTrabajador() {
+		return nombreTrabajador;
+	}
+
+	public void setNombreTrabajador(String nombreTrabajador) {
+		this.nombreTrabajador = nombreTrabajador;
 	}
 
 
