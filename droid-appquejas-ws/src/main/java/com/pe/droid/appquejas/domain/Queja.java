@@ -1,7 +1,10 @@
 package com.pe.droid.appquejas.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -71,6 +74,9 @@ public class Queja implements Serializable {
 
 	@Column(name="observacion_trabajador")
 	private String observacionTrabajador;
+	
+	@Transient
+	private String fechaCreacionString;
 
 	public Queja() {
 	}
@@ -209,6 +215,16 @@ public class Queja implements Serializable {
 
 	public void setObservacionTrabajador(String observacionTrabajador) {
 		this.observacionTrabajador = observacionTrabajador;
+	}
+
+	public String getFechaCreacionString() {
+		Date fecha = getFechaCreacion();
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+		return format.format(fecha);
+	}
+
+	public void setFechaCreacionString(String fechaCreacionString) {
+		this.fechaCreacionString = fechaCreacionString;
 	}
 
 
