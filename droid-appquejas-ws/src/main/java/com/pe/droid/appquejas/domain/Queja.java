@@ -77,6 +77,12 @@ public class Queja implements Serializable {
 	
 	@Transient
 	private String fechaCreacionString;
+	
+	@Transient
+	private String nombreCliente;
+	
+	@Transient
+	private String nombreEstado;
 
 	public Queja() {
 	}
@@ -225,6 +231,22 @@ public class Queja implements Serializable {
 
 	public void setFechaCreacionString(String fechaCreacionString) {
 		this.fechaCreacionString = fechaCreacionString;
+	}
+
+	public String getNombreCliente() {
+		return nombreCliente;
+	}
+
+	public void setNombreCliente(String nombreCliente) {
+		this.nombreCliente = nombreCliente;
+	}
+
+	public String getNombreEstado() {
+		return nombreEstado;
+	}
+
+	public void setNombreEstado(String nombreEstado) {
+		this.nombreEstado = nombreEstado;
 	}
 
 

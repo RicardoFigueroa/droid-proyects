@@ -16,18 +16,18 @@ public class Quejaestado implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_queja_estado")
-	private int idQuejaEstado;
+	private Long idQuejaEstado;
 
 	private String nombre;
 
 	public Quejaestado() {
 	}
 
-	public int getIdQuejaEstado() {
+	public Long getIdQuejaEstado() {
 		return this.idQuejaEstado;
 	}
 
-	public void setIdQuejaEstado(int idQuejaEstado) {
+	public void setIdQuejaEstado(Long idQuejaEstado) {
 		this.idQuejaEstado = idQuejaEstado;
 	}
 
