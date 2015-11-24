@@ -16,18 +16,18 @@ public class Quejagravedad implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_queja_gravedad")
-	private int idQuejaGravedad;
+	private Long idQuejaGravedad;
 
 	private String nombre;
 
 	public Quejagravedad() {
 	}
 
-	public int getIdQuejaGravedad() {
+	public Long getIdQuejaGravedad() {
 		return this.idQuejaGravedad;
 	}
 
-	public void setIdQuejaGravedad(int idQuejaGravedad) {
+	public void setIdQuejaGravedad(Long idQuejaGravedad) {
 		this.idQuejaGravedad = idQuejaGravedad;
 	}
 

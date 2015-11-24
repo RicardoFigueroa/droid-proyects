@@ -16,18 +16,18 @@ public class Quejazona implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id_zona")
-	private int idZona;
+	private Long idZona;
 
 	private String nombre;
 
 	public Quejazona() {
 	}
 
-	public int getIdZona() {
+	public Long getIdZona() {
 		return this.idZona;
 	}
 
-	public void setIdZona(int idZona) {
+	public void setIdZona(Long idZona) {
 		this.idZona = idZona;
 	}
 

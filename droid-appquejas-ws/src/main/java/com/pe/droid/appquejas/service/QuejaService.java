@@ -7,5 +7,7 @@ import com.pe.droid.appquejas.domain.Queja;
 public interface QuejaService {
 
 	List<Queja> listarQuejasPorUsuario(Integer idUsuario);
+
+	void actualizarQueja(Queja queja) throws Exception;
 	
 }
