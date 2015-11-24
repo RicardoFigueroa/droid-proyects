@@ -58,7 +58,14 @@ public class QuejaServiceImpl implements QuejaService {
 	@Override
 	public void actualizarQueja(Queja queja) throws Exception{
 
+		
+		
 		if (queja == null) {
+			throw new Exception("Debe ingresar el ID de queja");
+		}
+		
+		
+		if (queja.getIdQueja() == null) {
 			throw new Exception("Debe ingresar el ID de queja");
 		}
 		
