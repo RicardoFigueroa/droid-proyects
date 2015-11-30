@@ -82,7 +82,7 @@ public class QuejaServiceImpl implements QuejaService {
 		quejaCurrent.setLongitudVerificacion(queja.getLongitudVerificacion());
 		quejaCurrent.setFotoQuejaVerificacion(queja.getFotoQuejaVerificacion());
 		quejaCurrent.setFechaVerificacion(new Date());
-		
+		quejaCurrent.setIdQuejaEstado(2);
 		quejaRepository.save(quejaCurrent);
 	}
 
