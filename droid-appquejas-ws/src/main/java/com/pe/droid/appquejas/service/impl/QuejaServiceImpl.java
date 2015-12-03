@@ -99,7 +99,7 @@ public class QuejaServiceImpl implements QuejaService {
 	public Usuario findByContrasenaAndUsuario(String contrasena, String usuario) {
 		// TODO Auto-generated method stub
 		
-		Usuario usu = findByContrasenaAndUsuario(contrasena, usuario);
+		Usuario usu = usuarioRepository.findByContrasenaAndUsuario(contrasena, usuario);
 				
 		
 		return usu;
