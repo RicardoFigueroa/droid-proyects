@@ -30,10 +30,10 @@ public class QuejaServiceImpl implements QuejaService {
 
 	@Autowired
 	private QuejaEstadoRepository quejaEstadoRepository;
-	
+
 	@Autowired
 	private ClienteRepository clienteRepository;
-	
+
 	@Autowired
 	private TrabajadorRepository trabajadorRepository;
 
@@ -44,47 +44,47 @@ public class QuejaServiceImpl implements QuejaService {
 		quejaList.addAll(quejaRepository.findByIdCliente(idUsuario));
 		quejaList.addAll(quejaRepository.findByIdTrabajador(idUsuario));
 
+		quejaList
+				.forEach(q -> {
 
-		quejaList.forEach(q -> {
+					Usuario u = usuarioRepository.findOne(q.getIdCliente()
+							.longValue());
+					Quejaestado qe = quejaEstadoRepository.findOne(q
+							.getIdQuejaEstado().longValue());
+					q.setNombreEstado(qe.getNombre());
+					q.setNombreCliente(u.getApellidoPaterno() + " "
+							+ u.getApellidoMaterno() + ", " + u.getNombre());
 
-			Usuario u = usuarioRepository.findOne(q.getIdCliente().longValue());
-			Quejaestado qe = quejaEstadoRepository.findOne(q.getIdQuejaEstado()
-					.longValue());
-			q.setNombreEstado(qe.getNombre());
-			q.setNombreCliente(u.getApellidoPaterno() + " "
-					+ u.getApellidoMaterno() + ", " + u.getNombre());
-			
-			if(q.getIdTrabajador()!=null){
-				Usuario ut = usuarioRepository.findOne(q.getIdTrabajador().longValue());
-				q.setNombreTrabajador(ut.getApellidoPaterno() + " "
-						+ ut.getApellidoMaterno() + ", " + ut.getNombre());
-			}
-			
-		});
+					if (q.getIdTrabajador() != null) {
+						Usuario ut = usuarioRepository.findOne(q
+								.getIdTrabajador().longValue());
+						q.setNombreTrabajador(ut.getApellidoPaterno() + " "
+								+ ut.getApellidoMaterno() + ", "
+								+ ut.getNombre());
+					}
+
+				});
 
 		return quejaList;
 	}
 
 	@Override
-	public void actualizarQueja(Queja queja) throws Exception{
+	public void actualizarQueja(Queja queja) throws Exception {
 
-		
-		
 		if (queja == null) {
 			throw new Exception("Debe ingresar el ID de queja");
 		}
-		
-		
+
 		if (queja.getIdQueja() == null) {
 			throw new Exception("Debe ingresar el ID de queja");
 		}
-		
+
 		Queja quejaCurrent = quejaRepository.findOne(queja.getIdQueja());
-		
-		if(quejaCurrent == null){
-			throw new Exception("La queja ingresada no existe");			
+
+		if (quejaCurrent == null) {
+			throw new Exception("La queja ingresada no existe");
 		}
-		
+
 		quejaCurrent.setIdZona(queja.getIdZona());
 		quejaCurrent.setIdQuejaGravedad(queja.getIdQuejaGravedad());
 		quejaCurrent.setObservacionTrabajador(queja.getObservacionTrabajador());
@@ -108,7 +108,12 @@ public class QuejaServiceImpl implements QuejaService {
 			Cliente cl = clienteRepository.findOne(usu.getIdUsuario());
 			if(cl!=null){
 				usu.setTipoUsuario("CLIENTE");
-			}else{
+			}
+//			else{
+//				usu.setTipoUsuario("TRABAJADOR");
+//			}
+			Trabajador tr = trabajadorRepository.findByIdTrabajador(usu.getIdUsuario());
+			if (tr != null) {
 				usu.setTipoUsuario("TRABAJADOR");
 			}
 		}
@@ -120,5 +125,4 @@ public class QuejaServiceImpl implements QuejaService {
 		
 		return usu;
 	}
-
 }
