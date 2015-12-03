@@ -13,23 +13,23 @@ public class TrabajadorPK implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Column(name="id_rol", insertable=false, updatable=false)
-	private int idRol;
+	private Long idRol;
 
 	@Column(name="id_trabajador", insertable=false, updatable=false)
-	private int idTrabajador;
+	private Long idTrabajador;
 
 	public TrabajadorPK() {
 	}
-	public int getIdRol() {
+	public Long getIdRol() {
 		return this.idRol;
 	}
-	public void setIdRol(int idRol) {
+	public void setIdRol(Long idRol) {
 		this.idRol = idRol;
 	}
-	public int getIdTrabajador() {
+	public Long getIdTrabajador() {
 		return this.idTrabajador;
 	}
-	public void setIdTrabajador(int idTrabajador) {
+	public void setIdTrabajador(Long idTrabajador) {
 		this.idTrabajador = idTrabajador;
 	}
 
@@ -46,12 +46,4 @@ public class TrabajadorPK implements Serializable {
 			&& (this.idTrabajador == castOther.idTrabajador);
 	}
 
-	public int hashCode() {
-		final int prime = 31;
-		int hash = 17;
-		hash = hash * prime + this.idRol;
-		hash = hash * prime + this.idTrabajador;
-		
-		return hash;
-	}
 }

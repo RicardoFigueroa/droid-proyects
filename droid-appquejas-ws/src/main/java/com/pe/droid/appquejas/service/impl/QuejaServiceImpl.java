@@ -9,9 +9,12 @@ import org.springframework.stereotype.Service;
 
 import com.pe.droid.appquejas.domain.Queja;
 import com.pe.droid.appquejas.domain.Quejaestado;
+import com.pe.droid.appquejas.domain.Trabajador;
 import com.pe.droid.appquejas.domain.Usuario;
+import com.pe.droid.appquejas.repository.ClienteRepository;
 import com.pe.droid.appquejas.repository.QuejaEstadoRepository;
 import com.pe.droid.appquejas.repository.QuejaRepository;
+import com.pe.droid.appquejas.repository.TrabajadorRepository;
 import com.pe.droid.appquejas.repository.UsuarioRepository;
 import com.pe.droid.appquejas.service.QuejaService;
 
@@ -26,6 +29,12 @@ public class QuejaServiceImpl implements QuejaService {
 
 	@Autowired
 	private QuejaEstadoRepository quejaEstadoRepository;
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	@Autowired
+	private TrabajadorRepository trabajadorRepository;
 
 	@Override
 	public List<Queja> listarQuejasPorUsuario(Integer idUsuario) {
@@ -84,6 +93,16 @@ public class QuejaServiceImpl implements QuejaService {
 		quejaCurrent.setFechaVerificacion(new Date());
 		quejaCurrent.setIdQuejaEstado(2);
 		quejaRepository.save(quejaCurrent);
+	}
+
+	@Override
+	public Usuario findByContrasenaAndUsuario(String contrasena, String usuario) {
+		// TODO Auto-generated method stub
+		
+		Usuario usu = findByContrasenaAndUsuario(contrasena, usuario);
+				
+		
+		return usu;
 	}
 
 }
