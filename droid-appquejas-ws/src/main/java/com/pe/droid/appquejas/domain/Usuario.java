@@ -31,13 +31,13 @@ public class Usuario implements Serializable {
 
 	private String usuario;
 
-	//bi-directional one-to-one association to Cliente
-	@OneToOne(mappedBy="usuario")
-	private Cliente cliente;
-
-	//bi-directional many-to-many association to Trabajadorrol
-	@ManyToMany(mappedBy="usuarios")
-	private List<Trabajadorrol> trabajadorrols;
+//	//bi-directional one-to-one association to Cliente
+//	@OneToOne(mappedBy="usuario")
+//	private Cliente cliente;
+//
+//	//bi-directional many-to-many association to Trabajadorrol
+//	@ManyToMany(mappedBy="usuarios")
+//	private List<Trabajadorrol> trabajadorrols;
 
 	public Usuario() {
 	}
@@ -90,20 +90,20 @@ public class Usuario implements Serializable {
 		this.usuario = usuario;
 	}
 
-	public Cliente getCliente() {
-		return this.cliente;
-	}
-
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
-	}
-
-	public List<Trabajadorrol> getTrabajadorrols() {
-		return this.trabajadorrols;
-	}
-
-	public void setTrabajadorrols(List<Trabajadorrol> trabajadorrols) {
-		this.trabajadorrols = trabajadorrols;
-	}
+//	public Cliente getCliente() {
+//		return this.cliente;
+//	}
+//
+//	public void setCliente(Cliente cliente) {
+//		this.cliente = cliente;
+//	}
+//
+//	public List<Trabajadorrol> getTrabajadorrols() {
+//		return this.trabajadorrols;
+//	}
+//
+//	public void setTrabajadorrols(List<Trabajadorrol> trabajadorrols) {
+//		this.trabajadorrols = trabajadorrols;
+//	}
 
 }
