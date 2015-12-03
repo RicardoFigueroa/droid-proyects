@@ -1,6 +1,7 @@
 package com.pe.droid.appquejas.domain;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 /**
@@ -19,6 +20,9 @@ public class TrabajadorPK implements Serializable {
 	private Long idTrabajador;
 
 	public TrabajadorPK() {
+	}
+	public TrabajadorPK(Long idUsuario) {
+		idTrabajador = idUsuario;
 	}
 	public Long getIdRol() {
 		return this.idRol;

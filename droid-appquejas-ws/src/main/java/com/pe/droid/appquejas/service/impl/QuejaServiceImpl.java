@@ -11,6 +11,7 @@ import com.pe.droid.appquejas.domain.Cliente;
 import com.pe.droid.appquejas.domain.Queja;
 import com.pe.droid.appquejas.domain.Quejaestado;
 import com.pe.droid.appquejas.domain.Trabajador;
+import com.pe.droid.appquejas.domain.TrabajadorPK;
 import com.pe.droid.appquejas.domain.Usuario;
 import com.pe.droid.appquejas.repository.ClienteRepository;
 import com.pe.droid.appquejas.repository.QuejaEstadoRepository;
@@ -112,8 +113,9 @@ public class QuejaServiceImpl implements QuejaService {
 //			else{
 //				usu.setTipoUsuario("TRABAJADOR");
 //			}
-			Trabajador tr = trabajadorRepository.findByIdTrabajador(usu.getIdUsuario());
-			if (tr != null) {
+//			Trabajador tr = trabajadorRepository.findByIdTrabajador();
+			Boolean exist = trabajadorRepository.exists(new TrabajadorPK(usu.getIdUsuario()));
+			if (exist) {
 				usu.setTipoUsuario("TRABAJADOR");
 			}
 		}
