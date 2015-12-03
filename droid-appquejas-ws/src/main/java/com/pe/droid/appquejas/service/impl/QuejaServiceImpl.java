@@ -110,14 +110,14 @@ public class QuejaServiceImpl implements QuejaService {
 			if(cl!=null){
 				usu.setTipoUsuario("CLIENTE");
 			}
-//			else{
-//				usu.setTipoUsuario("TRABAJADOR");
-//			}
-//			Trabajador tr = trabajadorRepository.findByIdTrabajador();
-			Boolean exist = trabajadorRepository.exists(new TrabajadorPK(usu.getIdUsuario()));
-			if (exist) {
+			else{
 				usu.setTipoUsuario("TRABAJADOR");
 			}
+//			Trabajador tr = trabajadorRepository.findByIdTrabajador();
+//			Boolean exist = trabajadorRepository.exists(new TrabajadorPK(usu.getIdUsuario()));
+//			if (exist) {
+//				usu.setTipoUsuario("TRABAJADOR");
+//			}
 		}
 		
 		if(usu==null){			
