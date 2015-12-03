@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pe.droid.appquejas.domain.Cliente;
 import com.pe.droid.appquejas.domain.Queja;
 import com.pe.droid.appquejas.domain.Quejaestado;
 import com.pe.droid.appquejas.domain.Trabajador;
@@ -100,7 +101,22 @@ public class QuejaServiceImpl implements QuejaService {
 		// TODO Auto-generated method stub
 		
 		Usuario usu = usuarioRepository.findByContrasenaAndUsuario(contrasena, usuario);
-				
+		
+		if(usu!=null){
+			usu.setContrasena("************");
+			usu.setIsValidUser(true);
+			Cliente cl = clienteRepository.findOne(usu.getIdUsuario());
+			if(cl!=null){
+				usu.setTipoUsuario("CLIENTE");
+			}else{
+				usu.setTipoUsuario("TRABAJADOR");
+			}
+		}
+		
+		if(usu==null){			
+			usu = new Usuario();
+			usu.setIsValidUser(false);
+		}
 		
 		return usu;
 	}

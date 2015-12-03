@@ -30,7 +30,13 @@ public class Usuario implements Serializable {
 	private String nombre;
 
 	private String usuario;
+	
+	@Transient
+	private String tipoUsuario;
 
+	@Transient
+	private Boolean isValidUser;
+	
 //	//bi-directional one-to-one association to Cliente
 //	@OneToOne(mappedBy="usuario")
 //	private Cliente cliente;
@@ -89,6 +95,24 @@ public class Usuario implements Serializable {
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
+
+	public String getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(String tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+
+	public Boolean getIsValidUser() {
+		return isValidUser;
+	}
+
+	public void setIsValidUser(Boolean isValidUser) {
+		this.isValidUser = isValidUser;
+	}
+
+
 
 //	public Cliente getCliente() {
 //		return this.cliente;
