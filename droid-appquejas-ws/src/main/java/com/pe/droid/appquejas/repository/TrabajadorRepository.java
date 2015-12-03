@@ -9,6 +9,6 @@ import com.pe.droid.appquejas.domain.TrabajadorPK;
 public interface TrabajadorRepository extends CrudRepository<Trabajador, TrabajadorPK> {
 
 	  @Query(value = "SELECT * FROM trabajador WHERE id_trabajador = ?0", nativeQuery = true)
-	  Trabajador findByIdTrabajador(Long idTrabajador);
+	  Trabajador findByIdTrabajador(Long id_trabajador);
 	
 }
