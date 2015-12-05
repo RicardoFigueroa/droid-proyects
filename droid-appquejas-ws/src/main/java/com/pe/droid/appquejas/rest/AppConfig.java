@@ -23,7 +23,7 @@ public class AppConfig {
 	public DataSource dataSource() {
 		
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setUrl("jdbc:mysql://52.34.144.125:3306/droid_appquejas");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/droid_appquejas");
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		dataSource.setUsername("root");
 		dataSource.setPassword("root");
