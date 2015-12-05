@@ -11,5 +11,7 @@ public interface QuejaService {
 
 	void actualizarQueja(Queja queja) throws Exception;
 	
+	void registrarQueja(Queja queja) throws Exception;
+	
 	Usuario findByContrasenaAndUsuario(String contrasena,String usuario);
 }

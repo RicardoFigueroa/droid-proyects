@@ -127,4 +127,18 @@ public class QuejaServiceImpl implements QuejaService {
 		
 		return usu;
 	}
+
+	@Override
+	public void registrarQueja(Queja queja) throws Exception {
+
+		if (queja == null) {
+			throw new Exception("Debe ingresar la queja");
+		}
+
+
+		queja.setFechaVerificacion(new Date());
+		queja.setIdQuejaEstado(1);
+		quejaRepository.save(queja);
+
+	}
 }

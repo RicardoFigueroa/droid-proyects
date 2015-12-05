@@ -2,6 +2,7 @@ package com.pe.droid.appquejas.rest.controller;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -54,6 +55,26 @@ public class QuejaController {
 		try {
 			
 			quejaService.actualizarQueja(queja);
+			mapRequest.put("SaveStatus", "OK");
+			
+		} catch (Exception e) {
+			mapRequest.put("SaveStatus", "ERROR");
+			mapRequest.put("ErrorMessage", e.getMessage());
+		}
+		
+		return mapRequest;
+	}
+	
+	@RequestMapping(value = "", method = POST)
+	public Map<String,Object> registrarQueja(@RequestBody
+			Queja queja) {
+	
+		Map<String,Object> mapRequest = new LinkedHashMap<>();
+		
+		
+		try {
+			
+			quejaService.registrarQueja(queja);
 			mapRequest.put("SaveStatus", "OK");
 			
 		} catch (Exception e) {
