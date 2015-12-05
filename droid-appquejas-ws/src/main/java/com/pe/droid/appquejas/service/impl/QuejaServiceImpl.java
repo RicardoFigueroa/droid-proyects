@@ -136,7 +136,7 @@ public class QuejaServiceImpl implements QuejaService {
 		}
 
 
-		queja.setFechaVerificacion(new Date());
+		queja.setFechaCreacion(new Date());
 		queja.setIdQuejaEstado(1);
 		quejaRepository.save(queja);
 
